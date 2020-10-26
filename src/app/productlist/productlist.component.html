@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Product List</h2>
+    <p>Display Product List:</p>            
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Desc</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productlist">
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.desc}}</td>
+          <td>{{product.price}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="gotoview(product.id)">View</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-info" (click)="gotoedit(product.id)">Edit</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-danger" (click)="deleteproduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="addProduct()">Add new product</button>&nbsp;&nbsp;
+  </div>
